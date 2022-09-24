@@ -2,6 +2,19 @@ const Express = require("express");
 const app = Express();
 const { db } = require("./util/admin");
 app.get("/", fetchData);
+function getD(req, res){
+    const users = db.collection("users");
+    try {
+        users.get().then((user)=>{
+            const data = user.docs.forEach((us)=> us.id === "second");
+            return res.send(data);
+        })
+    } catch (error) {
+        console.log(error);
+        return res.send({"error": true})
+    }
+    
+}
 // fetch data from firebase
 function fetchData(req, res){
     const users = db.collection("users");
