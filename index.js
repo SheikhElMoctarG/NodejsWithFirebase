@@ -12,7 +12,8 @@ function fetchData(req, res){
                 first_name: doc.get('name'), 
                 last_name: doc.get('lastname')
             }));
-            return res.status(201).send(data);
+            console.log(data.length);
+            return res.send(data);
         });
     } catch (error) {
         return res.status(500).send({general: "there are error, try again."});
@@ -25,9 +26,9 @@ async function addToDatabase(){
     }
     const usersCollection = await db.collection("users").doc(randomId(5)).create(data);
 }
-for (let index = 0; index < 200; index++) {
-    addToDatabase()
-}
+// for (let index = 0; index < 15000; index++) {
+//     addToDatabase()
+// }
 // to get random strings
 function randomId(length) {
     var result           = '';
