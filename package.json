@@ -1,0 +1,15 @@
+{
+  "name": "connectnodejswithfirebase",
+  "version": "1.0.0",
+  "description": "first test to connect nodejs with firebase",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "keywords": [
+    "nodejs",
+    "firebase"
+  ],
+  "author": "Sheikh El-Moctar",
+  "license": "ISC"
+}
